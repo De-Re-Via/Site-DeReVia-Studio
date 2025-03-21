@@ -1,0 +1,382 @@
+/* Réinitialisation des marges/paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* définition du body sur toute la page */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* définition du body en colonne, plus adapté aux mobiles */
+
+    /* définition d'une police a tous mes textes */
+    font-family: "Archivo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+  
+/* définition d'un design responsive au traver d'un grille contenue dans 
+le container de la structure princpale: */  
+
+/* Structure principale du contenair */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Definition des Header et footer */
+header, footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Section principale */
+main {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Grille pour design responsive : */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Colonnes dynamiques */
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Éléments de la grille : */
+.grid-item {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+
+/* Icônes du footer disposé les uns à côté des autres */
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* NAV BAR */  
+
+nav {
+    background: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+
+/* définition du contenu */  
+
+section {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    width: 80%; /* Prendre toute la largeur disponible */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto; /* Centre la section horizontalement et verticalement */
+    margin-top: 10px;
+}
+
+/* class pour section top */
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    background: #333;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.top2 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    background: #ccc;
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.top3 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    background: #333;
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* personnalisation des liens, titres et autres */
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+}
+
+a:hover {
+    color: #8fc762;
+}
+
+p{
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    
+}
+
+h2{
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+}
+
+.logo {
+    width: 50px;  /* Ajuste la taille */
+    height: 50px; /* Ajuste la taille */
+    border-radius: 50%; /* Rend l'image circulaire */
+    object-fit: cover; /* Coupe l'image pour bien remplir le format */
+}
+
+#i{
+    font-size: 24px; /* Ajuste la taille des icônes */
+}
+
+
+/* création des sections déroulantes: https://developer.mozilla.org/fr/docs/Web/HTML/Element/details
+<details> dans HTML:  Crée un élément repliable sans JavaScript.
+<summary> dans HTML: Devient le bouton cliquable pour ouvrir/fermer la section.
+.gallery img avec <a href="..."> : Chaque image mène vers la page du projet.
+Effet au survol (hover) : Les images grossissent légèrement.*/
+
+/*  classe appliquée aux sections déroulantes <détails> */
+
+.projet {
+    
+    text-align: center;      /* Centre le texte dans la section */
+    width: 100%;             /* La section prend toute la largeur disponible */
+    max-width: 800px;        /* Limite la largeur pour ne pas être trop étirée */
+    background: #ccc;        /* Arrière-plan gris clair */
+    color: rgb(0, 0, 0);     /* Texte noir */
+    padding: 15px;           /* Ajoute un espace intérieur pour aérer le contenu */
+    border-radius: 10px;     /* Arrondit les coins de la section */
+    margin-bottom: 20px;     /* Ajoute un espace sous chaque section pour éviter qu'elles collent */
+    cursor: pointer;         /* Change le curseur en "main" pour indiquer que c'est cliquable */
+}
+
+
+
+/* Bouton cliquable pour ouvrir/fermer les sections */
+summary {
+    text-align: center; /* Centre le texte horizontalement */
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+    margin: auto;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    list-style: none;
+    width: 100%; /* Assure que le summary prend toute la largeur */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Couleur au survol */
+summary:hover {
+    color: #8fc762;
+    background-color: #444; /* Ajoute un léger assombrissement au survol */
+}
+
+/* Style du texte sous le titre */
+#sum{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* Définition de la galerie d'images */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajuste les colonnes */
+    gap: 15px;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    justify-items: center; /*  Centre les images dans la grille */
+}
+
+/* Règle générale pour les images dans la galerie */
+.gallery img {
+    width: 100%; /*  Les images prennent la largeur de leur conteneur */
+    max-width: 300px; /*  Limite la largeur max pour éviter trop d’agrandissement */
+    height: auto;
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out;
+    min-height: 200px;
+}
+
+/* Sur tablette : 2 images par ligne */
+@media screen and (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+/* Sur mobile : 1 seule image par ligne et bien centrée */
+@media screen and (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr; /* 1 colonne uniquement */
+    }
+}
+
+/* Effet au survol */
+.gallery img:hover {
+    transform: scale(1.1); /*  Réduction du zoom pour éviter que ça déborde trop */
+}
+
+
+/* PANNEAU ACUTALITE:
+Fonction survol::
+https://developer.mozilla.org/en-US/docs/Web/CSS/:hover
+
+Fonction déplacement de la position du panneau:
+https://developer.mozilla.org/en-US/docs/Web/CSS/left
+
+Fonction de transition:  
+https://developer.mozilla.org/en-US/docs/Web/CSS/transition
+
+Panneau d'actualités caché par défaut avec le left negatif 
+ALLER PLUS LOIN EN DEFINISSANT LE DESIGN RESPONSIVE DU PANNEAU ! */
+
+.actualites-panel {
+    position: fixed; /*https://developer.mozilla.org/en-US/docs/Web/CSS/left*/
+    top: 0;
+    left: -100%; /* Caché hors écran à gauche, position modifié par hover */
+    width: 40%; /* 1/3 de l’écran */
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9); 
+    color: white;
+    padding: 20px;
+    transition: left 0.4s ease-in-out; /*Transitions CSS pour un effet fluide */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Par défaut, le panneau (.actualites-panel) est caché: left: -100% dans sa position initiale
+Quand la souris survole uniquement #btn-actu, alors le panneau apparaît:*/
+
+#ic-actu:hover + .actualites-panel,
+.actualites-panel:hover {   /*Le panneau reste affiché tant que la souris est dessus*/
+    left: 0; /* Le panneau devient visible, décalage 0 pour le rndre visible*/
+}
+
+/* classe de dimensionnement des logo actu*/
+.logoActu {
+    width: 95px;  /* Ajuste la taille */
+    height: 95px; /* Ajuste la taille */
+    border-radius: 30%; /* Rend l'image circulaire */
+    object-fit: cover; /* Coupe l'image pour bien remplir le format */
+}
+
+/* FORMULAIRES */
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer les éléments dans la section */
+    width: 60%; /* Prendre toute la largeur disponible */
+}
+  
+form div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+  
+label {
+    flex: 1; /* Permet au label de s'étirer */
+    text-align: right;
+    margin-right: 10px;
+    
+}
+  
+input {
+    flex: 2; /* Ajuste la largeur des inputs */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 70%;
+}
+  
+input[type="submit"] {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #737671;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+ }
+  
+input[type="submit"]:hover {
+    background-color: #8fc762;
+}
