@@ -14,8 +14,7 @@ html, body {
 
     /* définition d'une police a tous mes textes */
     font-family: "Archivo", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
+    font-weight: lighter;
     font-style: normal;
     font-variation-settings: "wdth" 100;
 }
@@ -36,6 +35,13 @@ header, footer {
     color: white;
     text-align: center;
     padding: 15px;
+}
+
+/* Icônes du footer disposé les uns à côté des autres */
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 /* Section principale */
@@ -67,20 +73,34 @@ main {
     text-align: center;
 }
 
+/* Images de la grille : */
 .grid-item img {
     width: 100%;
     height: auto;
     border-radius: 10px;
 }
 
-
-
-/* Icônes du footer disposé les uns à côté des autres */
-.footer-icons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+/* Sur tablette : 2 images par ligne */
+@media screen and (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
 }
+
+/* Sur mobile : 1 seule image par ligne et centrée */
+@media screen and (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr; /* 1 colonne uniquement */
+    }
+}
+
+/* Sur Desktop : 3 images par ligne A DEFINIR */
+@media screen and (max-width: 1200px) {
+    .gallery {
+        grid-template-columns: 3fr; /* 1 colonne uniquement */
+    }
+}
+
 
 /* NAV BAR */  
 
@@ -106,19 +126,7 @@ section {
     margin-top: 10px;
 }
 
-/* class pour section top */
-.top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 800px;
-    background: #333;
-    color: white;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
+/* class pour section bannières en top */
 
 .top2 {
     display: flex;
@@ -150,6 +158,18 @@ section {
     margin-bottom: 20px;
 }
 
+.neutre {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff00;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;    
+    margin: 10px;
+}
+
 /* personnalisation des liens, titres et autres */
 
 ul {
@@ -178,6 +198,7 @@ p{
 
 h1{
     text-align: center;
+    font-weight: bold;
     
 }
 
@@ -196,10 +217,9 @@ h3{
     object-fit: cover; /* Coupe l'image pour bien remplir le format */
 }
 
-#i{
+.i{
     font-size: 24px; /* Ajuste la taille des icônes */
 }
-
 
 /* création des sections déroulantes: https://developer.mozilla.org/fr/docs/Web/HTML/Element/details
 <details> dans HTML:  Crée un élément repliable sans JavaScript.
@@ -213,7 +233,7 @@ Effet au survol (hover) : Les images grossissent légèrement.*/
     
     text-align: center;      /* Centre le texte dans la section */
     width: 100%;             /* La section prend toute la largeur disponible */
-    max-width: 800px;        /* Limite la largeur pour ne pas être trop étirée */
+    max-width:980px;        /* Limite la largeur pour ne pas être trop étirée */
     background: #ccc;        /* Arrière-plan gris clair */
     color: rgb(0, 0, 0);     /* Texte noir */
     padding: 15px;           /* Ajoute un espace intérieur pour aérer le contenu */
@@ -245,19 +265,13 @@ summary:hover {
     background-color: #444; /* Ajoute un léger assombrissement au survol */
 }
 
-/* Style du texte sous le titre */
-#sum{
-    font-size: 16px;
-    font-weight: 400;
-}
-
 /* Définition de la galerie d'images */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajuste les colonnes */
     gap: 15px;
     width: 90%;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: auto;
     justify-items: center; /*  Centre les images dans la grille */
 }
@@ -270,20 +284,6 @@ summary:hover {
     border-radius: 20px;
     transition: transform 0.3s ease-in-out;
     min-height: 200px;
-}
-
-/* Sur tablette : 2 images par ligne */
-@media screen and (max-width: 1024px) {
-    .gallery {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-}
-
-/* Sur mobile : 1 seule image par ligne et bien centrée */
-@media screen and (max-width: 600px) {
-    .gallery {
-        grid-template-columns: 1fr; /* 1 colonne uniquement */
-    }
 }
 
 /* Effet au survol */
@@ -321,20 +321,28 @@ ALLER PLUS LOIN EN DEFINISSANT LE DESIGN RESPONSIVE DU PANNEAU ! */
 }
 
 /* Par défaut, le panneau (.actualites-panel) est caché: left: -100% dans sa position initiale
-Quand la souris survole uniquement #btn-actu, alors le panneau apparaît:*/
+Quand la souris survole uniquement #ic-actu, alors le panneau apparaît:
+https://css-tricks.com/
+*/
 
 #ic-actu:hover + .actualites-panel,
 .actualites-panel:hover {   /*Le panneau reste affiché tant que la souris est dessus*/
     left: 0; /* Le panneau devient visible, décalage 0 pour le rndre visible*/
 }
 
-/* classe de dimensionnement des logo actu*/
+
+/* classe de dimensionnement des logo actu */
 .logoActu {
     width: 95px;  /* Ajuste la taille */
     height: 95px; /* Ajuste la taille */
     border-radius: 30%; /* Rend l'image circulaire */
     object-fit: cover; /* Coupe l'image pour bien remplir le format */
 }
+
+.actu > * {    /* permet d'appliquer un margin à tous les enfants de la classe actu pour la mise en page */
+    margin-bottom: 20px;
+  }
+  
 
 /* FORMULAIRES */
 
@@ -358,7 +366,17 @@ label {
     margin-right: 10px;
     
 }
-  
+ 
+
+textarea {
+    flex: 2; /* Ajuste la largeur des inputs */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 70%;
+    
+}
+
 input {
     flex: 2; /* Ajuste la largeur des inputs */
     padding: 5px;
